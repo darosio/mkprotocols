@@ -45,8 +45,6 @@ jobs:
         run: |
           # Assuming mkdocs-pdf-export-plugin is configured to output PDFs to 'site/pdfs'
           mkdir -p site/pdfs
-          # Example: Export PDFs using mkdocs-pdf-export-plugin if it's set up to do so automatically
-          # If not, you might need to manually specify how to generate PDFs
 
           # For demonstration, create dummy PDFs
           touch site/pdfs/sample.pdf

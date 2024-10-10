@@ -8,5 +8,8 @@ nav:
       - Titration: protocols/Titration_in_cells.md
 plugins:
   - search
-  - pdf-export:
-      enabled_iframe: true
+  - pdf-export
+  # :
+  # enabled_iframe: true
+  # filename: "{filename}.pdf"
+  # path: "pdfs" # Outputs PDFs to 'site/pdfs'

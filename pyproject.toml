@@ -24,10 +24,8 @@ dependencies = [
     "mkdocs-pdf-export-plugin"
 ]
 
+[tool.hatch.metadata]
+allow-direct-references = true
+
 [tool.hatch.envs.default.scripts]
 build = "mkdocs build --clean"
-
-[project.urls]
-Documentation = "https://github.com/darosio/mkprotocols#readme"
-Issues = "https://github.com/darosio/mkprotocols/issues"
-Source = "https://github.com/darosio/mkprotocols"
