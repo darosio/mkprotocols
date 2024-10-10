@@ -1,0 +1,33 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "mkprotocols"
+readme = "README.md"
+requires-python = ">=3.12"
+license = "BSD-3-Clause"
+keywords = []
+authors = [
+  { name = "daniele arosio", email = "daniele.arosio@cnr.it" },
+]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Programming Language :: Python",
+  "Programming Language :: Python :: 3.12",
+]
+dependencies = []
+version = "0.0.1"
+description = "Documentation for lab protocols using MkDocs"
+
+[tool.hatch.envs.default]
+dependencies = [
+    "mkdocs",
+    "mkdocs-material",
+    "mkdocs-pdf-export-plugin"
+]
+
+[project.urls]
+Documentation = "https://github.com/darosio/mkprotocols#readme"
+Issues = "https://github.com/darosio/mkprotocols/issues"
+Source = "https://github.com/darosio/mkprotocols"

@@ -1,0 +1,12 @@
+site_name: Lab Protocols
+theme:
+  name: material
+nav:
+  - Home: index.md
+  - Protocols:
+      - PCR: protocols/Sample_protocol.md
+      - Titration: protocols/Titration_in_cells.md
+plugins:
+  - search
+  - pdf-export:
+      enabled_iframe: true
