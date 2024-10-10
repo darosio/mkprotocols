@@ -1,6 +1,23 @@
 site_name: Lab Protocols
+site_url: https://darosio.github.io/mkprotocols
+repo_url: https://github.com/darosio/mkprotocols
+repo_name: darosio/mkprotocols
+edit_uri: edit/main/docs/
 theme:
   name: material
+  features:
+    - announce.dismiss
+    - content.action.edit
+    - navigation.footer
+    - navigation.indexes
+    - navigation.instant
+    - navigation.instant.progress
+    - navigation.sections
+    - navigation.tabs
+    - navigation.top
+    - navigation.tracking
+    - navigation.prune
+    - toc.follow
 nav:
   - Home: index.md
   - Protocols:
@@ -13,3 +30,9 @@ plugins:
   # enabled_iframe: true
   # filename: "{filename}.pdf"
   # path: "pdfs" # Outputs PDFs to 'site/pdfs'
+
+extra:
+  social:
+    - name: GitHub
+      icon: fontawesome/brands/github
+      link: https://github.com/darosio/mkprotocols
