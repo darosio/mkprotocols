@@ -16,16 +16,16 @@ classifiers = [
   "Programming Language :: Python",
   "Programming Language :: Python :: 3.12",
 ]
-dependencies = []
 version = "0.0.1"
 description = "Documentation for lab protocols using MkDocs"
-
-[tool.hatch.envs.default]
 dependencies = [
     "mkdocs",
     "mkdocs-material",
     "mkdocs-pdf-export-plugin"
 ]
+
+[tool.hatch.envs.default.scripts]
+build = "mkdocs build --clean"
 
 [project.urls]
 Documentation = "https://github.com/darosio/mkprotocols#readme"

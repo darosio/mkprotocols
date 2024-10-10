@@ -1,39 +1,81 @@
-name: Deploy MkDocs to GitHub Pages
+name: CI
 
 on:
   push:
     branches:
       - main
+    tags:
+      - "v*.*.*" # Triggers on version tags like v0.0.1
+  workflow_dispatch:
 
-concurrency:
-  group: test-${{ github.head_ref }}
-  cancel-in-progress: true
-
-env:
-  PYTHONUNBUFFERED: "1"
-  FORCE_COLOR: "1"
+permissions:
+  contents: write # Grants write access to repository contents
 
 jobs:
-  deploy:
+  build-deploy-release:
     runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
 
+    steps:
+      # 1. Checkout the repository
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0 # Ensures full history is fetched for release-please and commitlint
+
+      # 2. Setup Python
       - name: Setup Python
         uses: actions/setup-python@v4
         with:
-          python-version: "3.x"
+          python-version: "3.12"
 
-      - name: Install Dependencies with Hatch
+      # 3. Install Hatch
+      - name: Install Hatch
+        run: pip install hatch
+
+      # 4. Create Hatch Environment and Install Dependencies
+      - name: Create Hatch Environment
+        run: hatch env create
+
+      # 5. Build MkDocs Site Using Hatch
+      - name: Build MkDocs Site
+        run: hatch run build
+
+      # 6. Generate PDFs and Zip Them
+      - name: Generate and Zip PDFs
         run: |
-          pip install hatch
-          hatch run install
+          # Assuming mkdocs-pdf-export-plugin is configured to output PDFs to 'site/pdfs'
+          mkdir -p site/pdfs
+          # Example: Export PDFs using mkdocs-pdf-export-plugin if it's set up to do so automatically
+          # If not, you might need to manually specify how to generate PDFs
 
-      - name: Build MkDocs site
-        run: hatch run mkdocs build --clean
+          # For demonstration, create dummy PDFs
+          touch site/pdfs/sample.pdf
 
+          # Create a ZIP archive of PDFs
+          zip -j site/pdfs.zip site/pdfs/*.pdf
+
+      # 7. List Files for Debugging
+      - name: List Files in Site Directory
+        run: ls -R site
+
+      # 8. Deploy to GitHub Pages
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          folder: site
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: gh-pages
+          folder: site # MkDocs default output directory
+
+      # 9. Create GitHub Release with EPUB and PDFs ZIP
+      - name: Create GitHub Release
+        if: startsWith(github.ref, 'refs/tags/v')
+        uses: ncipollo/release-action@v1.9.0
+        with:
+          tag: ${{ github.ref_name }}
+          name: Release ${{ github.ref_name }}
+          body: |
+            Release ${{ github.ref_name }}
+          artifacts: |
+            site/pdfs.zip
+            # If you have EPUBs, add their paths here
+            # site/epubs/*.epub
