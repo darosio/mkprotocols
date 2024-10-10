@@ -31,9 +31,11 @@ jobs:
       # 3. Install Hatch
       - name: Install Hatch
         run: pip install hatch pdm
-      # 5. Install Build Dependencies
-      - name: Install Build Dependencies
-        run: pdm install --prod
+
+      # # 5. Install Build Dependencies
+      # - name: Install Build Dependencies
+      #   run: pdm install --prod
+
       # 4. Create Hatch Environment and Install Dependencies
       - name: Create Hatch Environment
         run: hatch env create
