@@ -1,34 +1,132 @@
 [build-system]
-requires = ["hatchling", "pdm-pep517"]
 build-backend = "hatchling.build"
+requires = ["hatchling", "pdm-pep517"]
 
 [project]
+authors = [
+  {name = 'Daniele Arosio', email = 'darosio@duck.com'}
+]
+classifiers = [
+  "Operating System :: OS Independent",
+  "Programming Language :: Python :: 3.12",
+  "Intended Audience :: Science/Research",
+  "Topic :: Scientific/Engineering",
+  "Development Status :: 4 - Beta"
+]
+dependencies = []
+description = "Documentation for lab protocols using MkDocs"
+keywords = ["Molecular Biology", "Biophysics"]
+license = "BSD-3-Clause"
 name = "mkprotocols"
 readme = "README.md"
 requires-python = ">=3.12"
-license = "BSD-3-Clause"
-keywords = []
-authors = [
-  { name = "daniele arosio", email = "daniele.arosio@cnr.it" },
-]
-classifiers = [
-  "Development Status :: 4 - Beta",
-  "Programming Language :: Python",
-  "Programming Language :: Python :: 3.12",
-]
 version = "0.0.1"
-description = "Documentation for lab protocols using MkDocs"
-dependencies = [
-    "mkdocs",
-    "mkdocs-material",
-    "mkdocs-pdf-export-plugin"
+
+[project.optional-dependencies]
+dev = [
+  "commitizen <= 3.29.1",
+  "pre-commit <= 4.0.1",
+  "pylsp-mypy <= 0.6.9",
+  "ruff <= 0.6.9",
+  "ruff-lsp == 0.0.57"
 ]
+docs = [
+  "mkdocs",
+  "mkdocs-material",
+  "mkdocs-pdf-export-plugin"
+]
+
+[tool.commitizen]
+name = "cz_customize"
+tag_format = "v$version"
+version = "0.0.1"
+version_files = [
+  "pyproject.toml:version",
+  "docs/conf.py:release",
+  "tests/test_cli.py:expected_version"
+]
+
+[tool.commitizen.customize]
+bump_map = {"^.+!:" = "MAJOR", "BREAKING CHANGE" = "MAJOR", "feat" = "MINOR", "fix" = "PATCH", "perf" = "PATCH", "refactor" = "PATCH"}
+bump_pattern = "^(BREAKING CHANGE|feat|fix|perf|refactor)"
+change_type_map = {"feat" = "Feat", "fix" = "Fix", "docs" = "Docs", "build" = "Build", "style" = "Style", "refactor" = "Refactor", "perf" = "Perf", "test" = "Test", "ci" = "CI/CD"}
+change_type_order = ["BREAKING CHANGE", "Feat", "Fix", "Docs", "Style", "Perf", "Test", "Build", "CI/CD"]
+changelog_pattern = "^(feat|fix|docs|style|refactor|perf|test|build|ci)?(\\(.*\\))?(!)?"
+commit_parser = "^(?P<change_type>feat|fix|docs|style|refactor|perf|test|build|ci|chore|revert)(?:\\((?P<scope>[^()\r\n]*)\\)|\\()?(?P<breaking>!)?:\\s(?P<message>.*)?"
+example = """fix(parser): correct minor typos in code\n
+see the issue for details on the typos fixed\n
+closes issue #12
+"""
+info_path = "cz_customize_info.txt"
+message_template = "{{change_type}}:{% if show_message %} {{message}}{% endif %}"
+schema = """
+<type>(<scope>): <subject>
+<BLANK LINE>
+<body>
+<BLANK LINE>
+(BREAKING CHANGE: )<footer>
+"""
+schema_pattern = "^(feat|fix|docs|style|refactor|perf|test|build|ci|chore|revert|bump)(?:\\(([^()\r\n]*)\\)|\\()?(!)?:\\s(.*)?|^git-annex in"
+
+[[tool.commitizen.customize.questions]]
+choices = [
+  {value = "feat", name = "feat: A new feature. Correlates with MINOR in SemVer"},
+  {value = "fix", name = "fix: A bug fix. Correlates with PATCH in SemVer"},
+  {value = "perf", name = "perf: A code change that improves performance. Correlates with PATCH in SemVer"},
+  {value = "docs", name = "docs: Documentation only changes"},
+  {value = "style", name = "style: Changes that do not affect the meaning of the code (white-space, formatting, missing semi-colons, etc)"},
+  {value = "refactor", name = "refactor: A code change that neither fixes a bug nor adds a feature"},
+  {value = "test", name = "test: Adding missing or correcting existing tests"},
+  {value = "build", name = "build: Changes that update the build system, development tools or external dependencies"},
+  {value = "ci", name = "ci: Changes to our CI configuration files and scripts (example scopes: GitLabCI)"},
+  {value = "revert", name = "revert: Reverting to previous commit(s)."}
+]
+message = "Select the type of change you are committing"
+name = "change_type"
+type = "list"
+
+[[tool.commitizen.customize.questions]]
+message = "Body."
+name = "message"
+type = "input"
+
+[[tool.commitizen.customize.questions]]
+message = "Do you want to add body message in commit?"
+name = "show_message"
+type = "confirm"
 
 [tool.hatch.build.targets.wheel]
 packages = ["docs"]
 
-[tool.pdm]
-hatch_compat = true
+[tool.hatch.envs.default]
+features = ["dev", "docs"]
 
 [tool.hatch.envs.default.scripts]
 build = "mkdocs build --clean"
+bump = [
+  "cz bump --major-version-zero -ch {args}",
+  "hatch build",
+  "export TEST_PYPI_TOKEN=$(pass show cloud/test_pypi | head -n 1) && hatch publish -r test -u __token__ -a $TEST_PYPI_TOKEN"
+]
+ch = "cz ch --incremental --unreleased-version HEAD"
+clean = "rm -rf ./build .coverage ./__pycache__ ./.mypy_cache ./.pytest_cache ./docs/_build ./tests/__pycache__ ./dist ./src/mkprotocols/__pycache__"
+docs = "sphinx-build docs docs/_build"
+docserve = "python -m http.server 8000 -d docs/_build"
+init = [
+  "pre-commit --version",
+  "pre-commit install",
+  "pre-commit install --hook-type commit-msg --hook-type pre-push"
+]
+lint = [
+  "pre-commit --version",
+  "pre-commit run --all-files --show-diff-on-failure {args}"  # No need for --hook-stage=manual
+]
+
+[tool.pdm]
+hatch_compat = true
+
+[tool.typos]
+
+[tool.typos.default.extend-words]
+arange = "arange"
+arosio = "Arosio"
