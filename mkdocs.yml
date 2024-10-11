@@ -18,6 +18,9 @@ theme:
     - navigation.tracking
     - navigation.prune
     - toc.follow
+  font:
+    text: Work Sans
+    code: Space Mono
 nav:
   - Home: index.md
   - Protocols:
