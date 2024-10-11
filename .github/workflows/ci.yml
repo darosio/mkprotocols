@@ -72,7 +72,7 @@ jobs:
           fetch-depth: 0 # Ensures full history is fetched for release-please and commitlint
 
       - name: 2. Setup Python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
           python-version: "3.12"
 
