@@ -18,3 +18,7 @@ This is a sample protocol to verify the Pandoc conversion process.
 
 1. Step one.
 2. Step two.
+
+```python
+import numpy
+```

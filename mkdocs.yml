@@ -1,8 +1,9 @@
-site_name: Lab Protocols
+site_name: Laboratory protocols
 site_url: https://darosio.github.io/mkprotocols
 repo_url: https://github.com/darosio/mkprotocols
 repo_name: darosio/mkprotocols
 edit_uri: edit/main/docs/
+docs_dir: docs
 theme:
   name: material
   features:
@@ -11,31 +12,41 @@ theme:
     - navigation.footer
     - navigation.indexes
     - navigation.instant
-    - navigation.instant.progress
+    # - navigation.instant.progress
     - navigation.sections
     - navigation.tabs
     - navigation.top
     - navigation.tracking
     - navigation.prune
     - toc.follow
+    - content.code.copy
+    - content.code.annotations
   font:
-    text: Work Sans
+    text: Roboto #IBM Plex Serif
     code: Space Mono
+  logo: assets/android-chrome-512x512.png
+  favicon: assets/favicon-32x32.png
+  palette:
+    - scheme: default
+      media: "(prefers-color-scheme: light)"
+      primary: blue grey
+      accent: teal
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to dark mode
+    - scheme: slate
+      media: "(prefers-color-scheme: dark)"
+      primary: deep purple
+      accent: teal
+      toggle:
+        icon: material/weather-night
+        name: Switch to light mode
+
 nav:
   - Home: index.md
   - Protocols:
       - PCR: protocols/Sample_protocol.md
       - Titration: protocols/Titration_in_cells.md
 plugins:
-  - search
+  # - search
   - pdf-export
-  # :
-  # enabled_iframe: true
-  # filename: "{filename}.pdf"
-  # path: "pdfs" # Outputs PDFs to 'site/pdfs'
-
-extra:
-  social:
-    - name: GitHub
-      icon: fontawesome/brands/github
-      link: https://github.com/darosio/mkprotocols
