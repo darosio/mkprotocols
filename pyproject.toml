@@ -25,15 +25,7 @@ version = "0.0.1"
 [project.optional-dependencies]
 dev = [
   "commitizen <= 3.29.1",
-  "pre-commit <= 4.0.1",
-  "pylsp-mypy <= 0.6.9",
-  "ruff <= 0.6.9",
-  "ruff-lsp == 0.0.57"
-]
-docs = [
-  "mkdocs",
-  "mkdocs-material",
-  "mkdocs-pdf-export-plugin"
+  "pre-commit <= 4.0.1"
 ]
 
 [tool.commitizen]
@@ -99,19 +91,11 @@ type = "confirm"
 packages = ["docs"]
 
 [tool.hatch.envs.default]
-features = ["dev", "docs"]
+features = ["dev"]
 
 [tool.hatch.envs.default.scripts]
-build = "mkdocs build --clean"
-bump = [
-  "cz bump --major-version-zero -ch {args}",
-  "hatch build",
-  "export TEST_PYPI_TOKEN=$(pass show cloud/test_pypi | head -n 1) && hatch publish -r test -u __token__ -a $TEST_PYPI_TOKEN"
-]
+bump = "cz bump --major-version-zero -ch {args}"
 ch = "cz ch --incremental --unreleased-version HEAD"
-clean = "rm -rf ./build .coverage ./__pycache__ ./.mypy_cache ./.pytest_cache ./docs/_build ./tests/__pycache__ ./dist ./src/mkprotocols/__pycache__"
-docs = "sphinx-build docs docs/_build"
-docserve = "python -m http.server 8000 -d docs/_build"
 init = [
   "pre-commit --version",
   "pre-commit install",
@@ -121,6 +105,17 @@ lint = [
   "pre-commit --version",
   "pre-commit run --all-files --show-diff-on-failure {args}"  # No need for --hook-stage=manual
 ]
+
+[tool.hatch.envs.docs]
+dependencies = [
+  "mkdocs",
+  "mkdocs-material",
+  "mkdocs-pdf-export-plugin"
+]
+
+[tool.hatch.envs.docs.scripts]
+build = "mkdocs build --clean --strict"
+serve = "mkdocs serve --dev-addr localhost:8000"
 
 [tool.pdm]
 hatch_compat = true

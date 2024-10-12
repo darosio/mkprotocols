@@ -83,13 +83,13 @@ jobs:
       # - name: Install Build Dependencies
       #   run: pdm install --prod
 
-      # 4. Create Hatch Environment and Install Dependencies
-      - name: Create Hatch Environment
-        run: hatch env create
+      # # 4. Create Hatch Environment and Install Dependencies
+      # - name: Create Hatch Environment
+      #   run: hatch env create
 
       # 5. Build MkDocs Site Using Hatch
       - name: Build MkDocs Site
-        run: hatch run build
+        run: hatch run docs:build
 
       # 6. Generate PDFs and Zip Them
       - name: Generate and Zip PDFs
