@@ -3,6 +3,16 @@
 
 # Changelog
 
+## v0.0.3 (2024-10-12)
+
+### Build
+
+- Consolidate repo structure and organization
+
+### CI/CD
+
+- cleaning ci.yml
+
 ## v0.0.2 (2024-10-12)
 
 ### Fix

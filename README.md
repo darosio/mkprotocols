@@ -1,4 +1,4 @@
-![Version](https://img.shields.io/badge/version-0.0.2-red)
+![Version](https://img.shields.io/badge/version-0.0.3-red)
 [![CI](https://github.com/darosio/mkprotocols/actions/workflows/ci.yml/badge.svg)](https://github.com/darosio/mkprotocols/actions/workflows/ci.yml)
 [![RtD](https://readthedocs.org/projects/mkprotocols/badge/)](https://mkprotocols.readthedocs.io/)
 
