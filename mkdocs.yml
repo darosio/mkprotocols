@@ -45,8 +45,10 @@ theme:
 nav:
   - Home: index.md
   - Protocols:
-      - PCR: protocols/Sample_protocol.md
       - Titration: protocols/Titration_in_cells.md
+  - HowTo:
+      - Development: development.md
+
 plugins:
   # - search
   - pdf-export

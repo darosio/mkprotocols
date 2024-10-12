@@ -5,6 +5,10 @@ description: "A sample protocol for testing purposes."
 tags: ["sample", "test"]
 ---
 
+Our goal is to provide well-documented, reproducible procedures.
+
+Each protocol includes detailed instructions, required materials, and troubleshooting tips.
+
 ## Introduction
 
 This is a sample protocol to verify the Pandoc conversion process.

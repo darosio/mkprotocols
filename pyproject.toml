@@ -34,8 +34,7 @@ tag_format = "v$version"
 version = "0.0.2"
 version_files = [
   "pyproject.toml:version",
-  "docs/conf.py:release",
-  "tests/test_cli.py:expected_version"
+  "README.md:version"
 ]
 
 [tool.commitizen.customize]
