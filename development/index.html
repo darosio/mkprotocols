@@ -445,42 +445,6 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#setting-up-a-development-with-direnv" class="md-nav__link">
-    <span class="md-ellipsis">
-      Setting up a development with direnv
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#setting-up-a-development-environment-manually" class="md-nav__link">
-    <span class="md-ellipsis">
-      Setting up a development environment manually
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#testing-and-coverage" class="md-nav__link">
-    <span class="md-ellipsis">
-      Testing and coverage
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#building-docs" class="md-nav__link">
-    <span class="md-ellipsis">
-      Building docs
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#bump-and-releasing" class="md-nav__link">
     <span class="md-ellipsis">
       Bump and releasing
@@ -541,42 +505,6 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#setting-up-a-development-with-direnv" class="md-nav__link">
-    <span class="md-ellipsis">
-      Setting up a development with direnv
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#setting-up-a-development-environment-manually" class="md-nav__link">
-    <span class="md-ellipsis">
-      Setting up a development environment manually
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#testing-and-coverage" class="md-nav__link">
-    <span class="md-ellipsis">
-      Testing and coverage
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#building-docs" class="md-nav__link">
-    <span class="md-ellipsis">
-      Building docs
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#bump-and-releasing" class="md-nav__link">
     <span class="md-ellipsis">
       Bump and releasing
@@ -620,101 +548,25 @@
 <h1 id="development-and-releasing">Development and releasing</h1>
 <p>You need the following requirements:</p>
 <ul>
-<li>
-<p><code>hatch</code> for test automation and package dependency managements. If you don't
-  have hatch, you can use <code>pipx run hatch</code> to run it without installing.</p>
-<pre><code>Dependencies and their
-versions are specified in the pyproject.toml file and updated in
-GitHub with Dependabot.
-
-You can run `hatch env show` to list available environments and
-scripts.
-
-    hatch env create
-    hatch run init  # init repo with pre-commit hooks
-
-    hatch run lint
-    hatch run tests.py3.11:all
-
-Hatch handles everything for you, including setting up an
-temporary virtual environment for each run.
-</code></pre>
-</li>
-<li>
-<p><code>pre-commit</code> for all style and consistency checking. While you can
-  run it with nox, this is such an important tool that it deserves to
-  be installed on its own. If pre-commit fails during pushing upstream
-  then stage changes, Commit Extend (into previous commit), and repeat
-  pushing.</p>
-</li>
+<li><code>hatch</code> for test automation and package dependency managements. If you don't
+  have hatch, you can use <code>pipx run hatch</code> to run it without installing.</li>
 </ul>
-<p><code>pip</code> and <code>hatch</code> are pinned in .github/workflows/constraints.txt for
-consistency with CI/CD.</p>
-<p>If you like install hatch and required deps in archlinux with:</p>
-<pre><code>pacman -S python-hatch python-hyperlink python-httpx
-</code></pre>
-<p>While <code>pre-commit</code> is listed as a 'dev' dependency, you also have the
-option to install it globally using pipx. This can be done with the
-following command:</p>
-<pre><code>pipx install pre-commit
-</code></pre>
-<h2 id="setting-up-a-development-with-direnv">Setting up a development with direnv</h2>
-<pre><code>echo "layout hatch" &gt; .envrc
-hatch run init
-</code></pre>
-<h2 id="setting-up-a-development-environment-manually">Setting up a development environment manually</h2>
-<p>You can set up a development environment by running:</p>
-<pre><code>python3 -m venv .venv
-source ./.venv/bin/activate
-pip install -v -e .[dev,tests,docs]
-</code></pre>
-<p>With direnv for using <a href="https://jupyter.org/">Jupyter</a> during
-development:</p>
-<pre><code>jupiter notebook
-</code></pre>
-<p>And only in case you need a system wide easy accessible kernel:</p>
-<pre><code>python -m ipykernel install --user --name="lab_protocols"
-</code></pre>
-<h2 id="testing-and-coverage">Testing and coverage</h2>
-<p>Use pytest to run the unit checks:</p>
-<pre><code>pytest
-</code></pre>
-<p>Use <code>coverage</code> to generate coverage reports:</p>
-<pre><code>coverage run --branch -p -m pytest
-</code></pre>
-<p>Or use hatch:</p>
-<pre><code>hatch run tests:all
-(hatch run tests:cov)
-</code></pre>
-<h2 id="building-docs">Building docs</h2>
-<p>You can build the docs using:</p>
-<pre><code>hatch run docs
-</code></pre>
-<p>You can see a preview with:</p>
-<pre><code>hatch run docserve
-</code></pre>
-<p>When needed (e.g. API updates):</p>
-<pre><code>sphinx-apidoc -f -o docs/api/ src/lab_protocols/
+<p>You can run <code>hatch env show</code> to list available environments and scripts.</p>
+<pre><code>    hatch env create
+    hatch run init
+
+    hatch run docs:serve
 </code></pre>
 <h2 id="bump-and-releasing">Bump and releasing</h2>
 <p>To bump version and upload build to test.pypi using:</p>
 <pre><code>hatch run bump
-hatch run bump "--increment PATCH" "--files-only" \
-    ["--no-verify" to bypass pre-commit and commit-msg hooks]
 git push
+git push --tags
 </code></pre>
 <p>while to update only the CHANGELOG.md file:</p>
 <pre><code>hatch run ch
 </code></pre>
 <p>Release will automatically occur after pushing.</p>
-<p>(Otherwise)</p>
-<pre><code>pipx run --spec commitizen cz bump --changelog-to-stdout --files-only \
-    (--prerelease alpha) --increment MINOR
-</code></pre>
-<p>To keep clean development history use branches and pr:</p>
-<pre><code>gh pr create --fill
-gh pr merge --squash --delete-branch [-t “fix|ci|feat: msg”]
-</code></pre>
 <h2 id="configuration-files">Configuration files</h2>
 <ul>
 <li>pre-commit configured in .pre-commit-config.yaml;</li>
@@ -729,10 +581,6 @@ file and updated in GitHub with <code>Dependabot</code>, a complete list of all 
 required packages and their versions (including transitive dependencies) can be
 generated by pip-deepfreeze in the requirements-[dev,docs,tests].txt files.</p>
 <p><code>pip</code> and <code>hatch</code> are pinned in .github/workflows/constraints.txt.</p>
-<p>Other manual actions:</p>
-<pre><code>pylint src/ tests/
-bandit -r src/
-</code></pre>
 
 
 
