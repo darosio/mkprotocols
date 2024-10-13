@@ -34,6 +34,7 @@ docs = [
 ]
 
 [tool.commitizen]
+changelog_file = "docs/CHANGELOG.md"
 name = "cz_conventional_commits"
 # name = "cz_customize"
 tag_format = "v$version"
