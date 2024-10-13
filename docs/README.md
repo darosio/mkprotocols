@@ -13,13 +13,13 @@ The protocols are organized by category for easy navigation.
 - [] tags
 - [] amend template
 - [] correct titration
-- test cz std config
 - add the version rtd-gh in nav
 - restore build –strict
 
 ## Available Protocols
 
-- **[Titration](protocols/Titration_in_cells.md)**: To perform biosensor calibration in Hek293 cells.
+- **[Titration](protocols/Titration_in_cells.md)**: To perform biosensor
+  calibration in Hek293 cells.
 
 ## How to Contribute
 
