@@ -51,3 +51,6 @@ nav:
 plugins:
   - search
   - pdf-export
+  - tags:
+      listings_toc: true
+      tags: false

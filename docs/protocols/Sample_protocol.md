@@ -1,11 +1,9 @@
+---
+tags:
+  - Template
+---
+
 # Sample Protocol
-
----
-
-tags: ["sample", "test"]
-version: 0.0.4
-
----
 
 ## Overview
 
@@ -47,3 +45,7 @@ If issues arise during the protocol, refer to the following common troubleshooti
 
     Issue 1: Potential problem and its solution.
     Issue 2: Potential problem and its solution.
+
+---
+
+Version: 0.0.4
