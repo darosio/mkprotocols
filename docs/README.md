@@ -10,9 +10,9 @@ The protocols are organized by category for easy navigation.
 
 ## TODO
 
+- add version to exported pdfs
 - [] correct titration
 - add the version rtd-gh in nav
-- add version to exported pdfs
 - restore build –strict
 
 ## Available Protocols
