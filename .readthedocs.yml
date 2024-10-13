@@ -18,6 +18,3 @@ python:
 # MkDocs settings
 mkdocs:
   configuration: mkdocs.yml
-
-versions:
-  only_tags: true
