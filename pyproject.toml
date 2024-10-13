@@ -27,6 +27,11 @@ dev = [
   "commitizen <= 3.29.1",
   "pre-commit <= 4.0.1"
 ]
+docs = [
+  "mkdocs",
+  "mkdocs-material",
+  "mkdocs-pdf-export-plugin"
+]
 
 [tool.commitizen]
 name = "cz_customize"
@@ -106,11 +111,7 @@ lint = [
 ]
 
 [tool.hatch.envs.docs]
-dependencies = [
-  "mkdocs",
-  "mkdocs-material",
-  "mkdocs-pdf-export-plugin"
-]
+features = ["docs"]
 
 [tool.hatch.envs.docs.scripts]
 build = "mkdocs build --clean --strict"
