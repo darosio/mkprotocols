@@ -3,6 +3,12 @@
 
 # Changelog
 
+## v0.1.1 (2024-10-13)
+
+### Fix
+
+- titration protocol
+
 ## v0.1.0 (2024-10-13)
 
 ### Feat
