@@ -30,7 +30,8 @@ dev = [
 docs = [
   "mkdocs",
   "mkdocs-material",
-  "mkdocs-pdf-export-plugin"
+  "mkdocs-pdf-export-plugin",
+  "pymdown-extensions>=10.11.2"
 ]
 
 [tool.commitizen]
@@ -41,7 +42,8 @@ tag_format = "v$version"
 version = "0.2.1"
 version_files = [
   "pyproject.toml:version",
-  "docs/README.md:.version-"
+  "docs/README.md:.version-",
+  "*.md:Version:"
 ]
 
 [tool.hatch.build.targets.wheel]

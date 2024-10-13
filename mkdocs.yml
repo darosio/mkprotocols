@@ -44,7 +44,7 @@ theme:
 nav:
   - Introduction: README.md
   - Protocols:
-      - Titration: protocols/Titration_in_cells.md
+      - Calibration: protocols/Chloride_pH_calibration.md
   - Development:
       - Development: development.md
       - Changelog: CHANGELOG.md
@@ -55,3 +55,8 @@ plugins:
   - tags:
       listings_toc: false
       tags: true
+
+markdown_extensions:
+  - def_list
+  - pymdownx.tasklist:
+      custom_checkbox: true

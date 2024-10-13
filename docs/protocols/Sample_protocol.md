@@ -18,15 +18,19 @@ troubleshooting tips.
 
 Ensure the following materials are available before starting the procedure:
 
-- **Material 1**: [Provide description or specifications if necessary]
-- **Material 2**: [Provide description or specifications if necessary]
+- Material 1: [Provide description or specifications if necessary]
+- Material 2: [Provide description or specifications if necessary]
+
+|             | 1 well | … wells |
+| ----------- | ------ | ------- |
+| Plasmid DNA | 0.3 µg |         |
 
 ## Procedure
 
 Follow these steps to complete the protocol:
 
-1. **Step One**: Brief description of the first step. Include specific measurements, time points, or other details where relevant.
-2. **Step Two**: Brief description of the second step. Add any additional details necessary to complete the protocol.
+1. Step One: Brief description of the first step. Include specific measurements, time points, or other details where relevant.
+2. Step Two: Brief description of the second step. Add any additional details necessary to complete the protocol.
 
 ### Example Code
 
@@ -39,13 +43,13 @@ array = np.array([1, 2, 3, 4])
 print(array)
 ```
 
-## Troubleshooting
+## Notes and troubleshooting
 
 If issues arise during the protocol, refer to the following common troubleshooting tips:
 
-    Issue 1: Potential problem and its solution.
-    Issue 2: Potential problem and its solution.
+- Issue 1: Potential problem and its solution.
+- Issue 2: Potential problem and its solution.
 
 ---
 
-Version: 0.0.4
+Version: 0.2.1

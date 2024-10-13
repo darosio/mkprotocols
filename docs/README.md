@@ -10,14 +10,13 @@ The protocols are organized by category for easy navigation.
 
 ## TODO
 
-- add version to exported pdfs
-- [] correct titration
-- add the version rtd-gh in nav
-- restore build –strict
+- [ ] add version to exported pdfs
+- [ ] add the version rtd-gh in nav
+- [ ] restore build –strict
 
 ## Available Protocols
 
-- **[Titration](protocols/Titration_in_cells.md)**: To perform biosensor
+- **[Calibration](protocols/Chloride_pH_calibration.md)**: To perform biosensor
   calibration in Hek293 cells.
 
 ## How to Contribute
