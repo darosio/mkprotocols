@@ -20,7 +20,7 @@ license = "BSD-3-Clause"
 name = "mkprotocols"
 readme = "docs/README.md"
 requires-python = ">=3.12"
-version = "0.0.3"
+version = "0.0.4"
 
 [project.optional-dependencies]
 dev = [
@@ -37,10 +37,10 @@ docs = [
 name = "cz_conventional_commits"
 # name = "cz_customize"
 tag_format = "v$version"
-version = "0.0.3"
+version = "0.0.4"
 version_files = [
   "pyproject.toml:version",
-  "README.md:version"
+  "docs/README.md:version"
 ]
 
 [tool.hatch.build.targets.wheel]
