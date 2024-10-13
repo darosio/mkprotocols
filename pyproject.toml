@@ -38,7 +38,7 @@ changelog_file = "docs/CHANGELOG.md"
 name = "cz_conventional_commits"
 # name = "cz_customize"
 tag_format = "v$version"
-version = "0.1.1"
+version = "0.2.0"
 version_files = [
   "pyproject.toml:version",
   "docs/README.md:.version-"
