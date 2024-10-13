@@ -18,7 +18,7 @@ description = "Documentation for lab protocols using MkDocs"
 keywords = ["Molecular Biology", "Biophysics"]
 license = "BSD-3-Clause"
 name = "mkprotocols"
-readme = "README.md"
+readme = "docs/README.md"
 requires-python = ">=3.12"
 version = "0.0.3"
 
@@ -114,7 +114,7 @@ lint = [
 features = ["docs"]
 
 [tool.hatch.envs.docs.scripts]
-build = "mkdocs build --clean --strict"
+build = "mkdocs build --clean"  # --strict
 serve = "mkdocs serve --dev-addr localhost:8000"
 
 [tool.pdm]

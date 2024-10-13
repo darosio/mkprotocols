@@ -18,6 +18,3 @@ python:
 # MkDocs settings
 mkdocs:
   configuration: mkdocs.yml
-  # extra_requirements:
-  # - mkdocs-material
-  #   - mkdocs-pdf-export-plugin

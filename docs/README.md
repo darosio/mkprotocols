@@ -1,7 +1,21 @@
+![Version](https://img.shields.io/badge/version-0.0.3-grey)
+[![CI](https://github.com/darosio/mkprotocols/actions/workflows/ci.yml/badge.svg)](https://github.com/darosio/mkprotocols/actions/workflows/ci.yml)
+[![gh-pages](https://img.shields.io/badge/gh-pages-green?logo=github)](https://darosio.github.io/mkprotocols/)
+[![Read the Docs](https://img.shields.io/readthedocs/pip/stable.svg)](https://mkprotocols.readthedocs.io/)
+
 Welcome to this laboratory protocols repository, featuring standardized
 protocols for molecular biology and biophysical experiments.
 
 The protocols are organized by category for easy navigation.
+
+## TODO
+
+- [] tags
+- [] amend template
+- [] correct titration
+- test cz std config
+- add the version rtd-gh in nav
+- restore build –strict
 
 ## Available Protocols
 

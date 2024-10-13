@@ -3,7 +3,6 @@ site_url: https://darosio.github.io/mkprotocols
 repo_url: https://github.com/darosio/mkprotocols
 repo_name: darosio/mkprotocols
 edit_uri: edit/main/docs/
-docs_dir: docs
 theme:
   name: material
   features:
@@ -12,7 +11,7 @@ theme:
     - navigation.footer
     - navigation.indexes
     - navigation.instant
-    # - navigation.instant.progress
+    # - navigation.instant.progress  # Conflict with pdf export
     - navigation.sections
     - navigation.tabs
     - navigation.top
@@ -36,19 +35,19 @@ theme:
         name: Switch to dark mode
     - scheme: slate
       media: "(prefers-color-scheme: dark)"
-      primary: deep purple
+      primary: grey
       accent: teal
       toggle:
         icon: material/weather-sunny
         name: Switch to light mode
 
 nav:
-  - Home: index.md
+  - Introduction: README.md
   - Protocols:
       - Titration: protocols/Titration_in_cells.md
   - HowTo:
       - Development: development.md
 
 plugins:
-  # - search
+  - search
   - pdf-export
