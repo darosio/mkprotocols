@@ -1,28 +1,49 @@
+# Sample Protocol
+
 ---
-title: "Sample Protocol"
-date: 2024-10-09
-description: "A sample protocol for testing purposes."
+
 tags: ["sample", "test"]
+version: 0.0.4
+
 ---
 
-Our goal is to provide well-documented, reproducible procedures.
+## Overview
 
-Each protocol includes detailed instructions, required materials, and troubleshooting tips.
+This sample protocol is designed as a template for documenting laboratory
+procedures.
 
-## Introduction
-
-This is a sample protocol to verify the Pandoc conversion process.
+Each protocol in this repository is intended to be well-documented,
+reproducible, and includes necessary materials, step-by-step instructions, and
+troubleshooting tips.
 
 ## Materials
 
-- Material 1
-- Material 2
+Ensure the following materials are available before starting the procedure:
+
+- **Material 1**: [Provide description or specifications if necessary]
+- **Material 2**: [Provide description or specifications if necessary]
 
 ## Procedure
 
-1. Step one.
-2. Step two.
+Follow these steps to complete the protocol:
+
+1. **Step One**: Brief description of the first step. Include specific measurements, time points, or other details where relevant.
+2. **Step Two**: Brief description of the second step. Add any additional details necessary to complete the protocol.
+
+### Example Code
+
+In some protocols, you may need to run computational tasks. Below is a sample Python code snippet:
 
 ```python
-import numpy
+import numpy as np
+
+array = np.array([1, 2, 3, 4])
+print(array)
 ```
+
+## Troubleshooting
+
+If issues arise during the protocol, refer to the following common troubleshooting tips:
+
+    Issue 1: Potential problem and its solution.
+    Issue 2: Potential problem and its solution.
