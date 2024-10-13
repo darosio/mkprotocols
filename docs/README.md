@@ -1,7 +1,7 @@
 [![Read the Docs](https://img.shields.io/readthedocs/pip/stable.svg)](https://mkprotocols.readthedocs.io/)
 [![gh-pages](https://img.shields.io/badge/gh-pages-green?logo=github)](https://darosio.github.io/mkprotocols/)
 [![CI](https://github.com/darosio/mkprotocols/actions/workflows/ci.yml/badge.svg)](https://github.com/darosio/mkprotocols/actions/workflows/ci.yml)
-![Version](https://img.shields.io/badge/version-0.0.4-grey)
+![Version](https://img.shields.io/badge/version-0.1.0-grey)
 
 Welcome to this laboratory protocols repository, featuring standardized
 protocols for molecular biology and biophysical experiments.

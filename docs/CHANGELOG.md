@@ -3,6 +3,17 @@
 
 # Changelog
 
+## v0.1.0 (2024-10-13)
+
+### Feat
+
+- Add tags
+
+### Fix
+
+- sample protocol
+- RtD
+
 ## v0.0.4 (2024-10-13)
 
 ### Fix
@@ -45,6 +56,6 @@
 
 - styling
 
-## v0.0.1 (2024-10-11)
+## v0.0.1 (2024-10-10)
 
-- Creation.
+- Creation
