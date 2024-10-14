@@ -6,23 +6,23 @@ edit_uri: edit/main/docs/
 theme:
   name: material
   features:
-    - announce.dismiss
-    - content.action.edit
-    - navigation.footer
-    - navigation.indexes
-    - navigation.instant
-    # - navigation.instant.progress  # Conflict with pdf export
-    - navigation.sections
-    - navigation.tabs
-    - navigation.top
-    - navigation.tracking
-    - navigation.prune
-    - toc.follow
+    # - announce.dismiss
+    # - content.action.edit
+    # - navigation.footer
+    # - navigation.indexes
+    # - navigation.instant
+    # # - navigation.instant.progress  # Conflict with pdf export
+    # - navigation.sections
+    # - navigation.tabs
+    # - navigation.top
+    # - navigation.tracking
+    # - navigation.prune
+    # - toc.follow
     - content.code.copy
     - content.code.annotations
   font:
-    text: Roboto #IBM Plex Serif
-    code: Space Mono
+    text: IBM Plex Serif
+    code: IBM Plex Mono
   logo: assets/android-chrome-512x512.png
   favicon: assets/favicon-32x32.png
   palette:
@@ -35,7 +35,7 @@ theme:
         name: Switch to dark mode
     - scheme: slate
       media: "(prefers-color-scheme: dark)"
-      primary: grey
+      primary: blue grey
       accent: teal
       toggle:
         icon: material/weather-sunny

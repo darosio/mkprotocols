@@ -4,3 +4,4 @@
 !/public/.nojekyll
 node_modules/
 pdm.lock
+.pdm-python
