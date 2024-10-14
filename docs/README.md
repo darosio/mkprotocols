@@ -8,16 +8,10 @@ protocols for molecular biology and biophysical experiments.
 
 The protocols are organized by category for easy navigation.
 
-## TODO
-
-- [ ] add version to exported pdfs
-- [ ] add the version rtd-gh in nav
-- [ ] restore build –strict
-
 ## Available Protocols
 
-- **[Calibration](protocols/Chloride_pH_calibration.md)**: To perform biosensor
-  calibration in Hek293 cells.
+- [Calibration](protocols/Chloride_pH_calibration.md): Chloride and pH
+  calibration of ClopHensor in Hek293 cells.
 
 ## How to Contribute
 
