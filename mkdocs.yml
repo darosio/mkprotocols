@@ -56,7 +56,7 @@ plugins:
   - page-to-pdf:
       displayHeaderFooter: true
       headerTemplate: |
-        <div style="margin: 0 2cm; width: 75%; font-size: 11px; text-align: right;">Version: 0.2.1</div>
+        <div style="margin: 0 2cm; width: 75%; font-size: 11px; text-align: right;">Version: 0.2.2</div>
       footerTemplate: |
         <div style="margin: 0 2cm; width: 75%; font-size: 11px; text-align: center;">
         <span class="pageNumber"></span> / <span class="totalPages"></span>

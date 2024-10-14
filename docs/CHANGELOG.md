@@ -3,6 +3,12 @@
 
 # Changelog
 
+## v0.2.2 (2024-10-14)
+
+### Fix
+
+- titration protocol
+
 ## v0.2.1 (2024-10-13)
 
 ### Fix
