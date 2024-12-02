@@ -34,7 +34,7 @@ repos:
         args: [--autofix]
 
   - repo: https://github.com/astral-sh/ruff-pre-commit
-    rev: v0.8.0
+    rev: v0.8.1
     hooks:
       - id: ruff
         types_or: [python, pyi, jupyter]
@@ -66,7 +66,7 @@ repos:
       - id: pydoclint
 
   - repo: https://github.com/crate-ci/typos
-    rev: typos-dict-v0.11.35
+    rev: typos-dict-v0.11.37
     hooks:
       - id: typos
         # args: [] # Turn off automatic fixing
@@ -82,7 +82,7 @@ repos:
         args: [-x]
 
   - repo: https://github.com/commitizen-tools/commitizen
-    rev: v3.31.0
+    rev: v4.0.0
     hooks:
       - id: commitizen
       # - id: commitizen-branch
