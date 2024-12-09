@@ -24,7 +24,7 @@ version = "0.2.2"
 
 [project.optional-dependencies]
 dev = [
-  "commitizen <= 3.31.0",
+  "commitizen <= 4.1.0",
   "pre-commit <= 4.0.1"
 ]
 docs = [
